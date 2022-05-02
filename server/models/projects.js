@@ -25,9 +25,23 @@ const projectSchema = new Project({
         required: true,
     },
 
-    date:{
+    dateCreated:{
+        type: String,
+        required: true,
+    },
 
-    }
+    github:{
+        type: String,
+        required: true,
+    },
 
+    depolyedLink:{
+        type: String,
+        required: true,
+    },
 
-})
+});
+
+const Project = mongoose.model('Project', projectSchema);
+
+module.exports = Project;

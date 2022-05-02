@@ -28,6 +28,14 @@ const resolvers = {
 
             return { token, user };
         },
-        createProject : async (parent, {})
+
+        createProject : async (parent, { title, authors, description, techUsed, dateCreated, github, depolyedLink }, context) => {
+        },
+
+        updateProject: async (parent, { title, authors, description, techUsed, dateCreated, github, depolyedLink }) => {
+            return Project.update({_id: id}, {title, authors, description, techUsed, dateCreated, github, depolyedLink});
+        }
     }
-},
+};
+
+module.exports = resolvers;
